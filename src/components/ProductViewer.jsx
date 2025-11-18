@@ -2,7 +2,9 @@ import React from "react";
 import useMackBookStore from "../store";
 import clsx from "clsx";
 import { Canvas } from "@react-three/fiber";
-import { Box } from "@react-three/drei";
+import { Box, OrbitControls } from "@react-three/drei";
+import MacbookModel14 from "./models/Macbook-14";
+import MacbookModel16 from "./models/Macbook-16";
 
 const ProductViewer = () => {
   const { color, scale, setColor, setScale } = useMackBookStore();
@@ -54,9 +56,10 @@ const ProductViewer = () => {
           </div>
         </div>
       </div>
-      <p className="text-white text-4xl">Render Canvas</p>
       <Canvas id="canvas">
-        <Box position={[-1, 1, 0]} scale={10 * scale}></Box>
+        <ambientLight intensity={1} />
+        <MacbookModel14 scale={0.06} position={[0, 0, 0]} />
+        <OrbitControls enableZoom={false} />
       </Canvas>
     </section>
   );
