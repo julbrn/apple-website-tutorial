@@ -17,7 +17,7 @@ const Hero = () => {
         src="./videos/hero.mp4"
         autoPlay
         muted
-        playsInLine
+        playsInline
       ></video>
       <button>Buy</button>
       <p>From $1599 to $133/mo for 12 months</p>
